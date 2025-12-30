@@ -8,7 +8,7 @@ public class PlayerMovment : MonoBehaviour
     
     private float movment;
     public float moveSpeed = 6f;
-    private bool facingRight = True;
+    private bool facingRight = true;
     void Start()
     {
        
@@ -34,4 +34,10 @@ public class PlayerMovment : MonoBehaviour
     {
         transform.position += new Vector3(movment, 0f, 0f) * Time.fixedDeltaTime * moveSpeed;
     }
+
+    void jump() {
+        rb.AddForce(new Vector2(0f, jumpHeight ), ForceMode2D.Impulse);
+    }
+    
+    
 }
