@@ -5,6 +5,7 @@ public class PlayerMovment : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Rigidbody2D rb;
+    public float jumpHeight = 5f;
     
     private float movment;
     public float moveSpeed = 6f;
@@ -24,8 +25,10 @@ public class PlayerMovment : MonoBehaviour
        } else if (movment > 0f && facingRight == false) {
            transform.eulerAngles = new Vector3(0f, 0f, 0f);
            facingRight = true;
-           
-           
+       }
+
+       if (input.GetKey(KeyCode.Space)) {
+           jump();
        }
 
     }
